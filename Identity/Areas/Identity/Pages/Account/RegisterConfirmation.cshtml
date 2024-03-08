@@ -1,0 +1,23 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Підтвердження реєстрації";
+}
+
+<h1>@ViewData["Title"]</h1>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+<p>
+            Наразі для цього додатка не зареєстровано жодного реального відправника, див. <a href="https://aka.ms/aspaccountconf">ці документи</a> як налаштувати справжнього відправника email.
+            Зазвичай це надсилається електронною поштою: <a id="confirm-link" href="@Model.EmailConfirmationUrl">Натисніть тут, щоб підтвердити свій обліковий запис</a>
+</p>
+    }
+    else
+    {
+<p>
+            Будь ласка, перевірте свою електронну пошту, щоб підтвердити обліковий запис.
+</p>
+    }
+}
+
